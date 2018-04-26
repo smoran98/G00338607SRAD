@@ -1,4 +1,4 @@
-package com.ships.repositories;
+package com.ships.security;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -11,7 +11,7 @@ public class Security extends WebSecurityConfigurerAdapter {
 
 	@Override
 	public void configure(HttpSecurity httpSecurity) throws Exception {
-		httpSecurity.authorizeRequests().antMatchers("/addShips", "/", "/addShippingCompany", "/createOrder").hasRole("USER").and().formLogin();
+		httpSecurity.authorizeRequests().antMatchers("/addShips", "/addShippingCompany", "/createOrder").hasRole("USER").and().formLogin();
 	}
 
 	@Autowired

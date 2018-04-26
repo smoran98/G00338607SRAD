@@ -15,6 +15,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class OrderInfo {
 	
+	// Variables
 	@Id
 	@GeneratedValue
 	private int oid;

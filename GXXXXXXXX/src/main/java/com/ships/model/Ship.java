@@ -14,6 +14,8 @@ import javax.validation.constraints.Size;
 
 @Entity
 public class Ship {
+	
+	// Variables
 	@Id
 	@GeneratedValue
 	private int sid;

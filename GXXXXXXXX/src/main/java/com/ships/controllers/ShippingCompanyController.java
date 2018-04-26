@@ -17,7 +17,8 @@ import com.ships.services.ShippingCompanyService;
 
 @Controller
 public class ShippingCompanyController {
-
+	
+	// Variables
 	@Autowired
 	private ShippingCompanyService shipCompanyService;
 	

@@ -17,6 +17,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class ShippingCompany {
 	
+	// Variables
 	@Id
 	@GeneratedValue
 	private int scid;
@@ -36,7 +37,6 @@ public class ShippingCompany {
 	private List<OrderInfo>
 	orders = new ArrayList<OrderInfo>();
 
-	
 	public int getScid() {
 		return scid;
 	}
