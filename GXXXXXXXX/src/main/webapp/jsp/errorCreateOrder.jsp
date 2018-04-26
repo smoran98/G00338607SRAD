@@ -10,7 +10,7 @@
 	</head>
 	<body>
 		<h1>Error Creating the Order</h1>
-		<h2>${errorMessage}</h2>
-		<a href="/">Home</a>
+			<br>
+	<a href="/index.html">Home</a>
 	</body>
 </html>

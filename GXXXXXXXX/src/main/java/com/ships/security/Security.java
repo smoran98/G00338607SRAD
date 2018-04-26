@@ -5,13 +5,15 @@ import org.springframework.security.config.annotation.authentication.builders.Au
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 @EnableWebSecurity
 public class Security extends WebSecurityConfigurerAdapter {
 
 	@Override
 	public void configure(HttpSecurity httpSecurity) throws Exception {
-		httpSecurity.authorizeRequests().antMatchers("/addShips", "/addShippingCompany", "/createOrder").hasRole("USER").and().formLogin();
+		httpSecurity.authorizeRequests().antMatchers("/addShips", "/addShippingCompany", "/createOrder").hasRole("USER").and().formLogin().and()
+	    .logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout"));
 	}
 
 	@Autowired
@@ -20,5 +22,7 @@ public class Security extends WebSecurityConfigurerAdapter {
 			throws Exception {
 		auth.inMemoryAuthentication().withUser("user").password("user").roles("USER");
 	}
+	
+	
 
 }

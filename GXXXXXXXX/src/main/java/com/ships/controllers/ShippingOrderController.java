@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -30,6 +31,12 @@ public class ShippingOrderController {
 	private ShipService shipService;
 	@Autowired
 	private OrderService orderInfoService;
+	
+	// Handles Errors
+	@ExceptionHandler(value = Exception.class)
+	public String handleError() {
+		return "errorCreateOrder";
+	}
 	
 	// Method shows all ships orders
 	@RequestMapping(value = "/showOrders", method=RequestMethod.GET)

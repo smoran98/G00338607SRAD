@@ -5,7 +5,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<link href="/css/style.css" rel="stylesheet" />
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>New Orders</title>
 </head>
@@ -20,12 +19,13 @@
 			</tr>
 			<tr>
 				<td>Shipping Company</td>
-				<form:select path="shippingCompany.scid" items="${companyList}" />
+				<td><form:select path="shippingCompany.scid" items="${companyList}" /></td>
 				<td><form:errors path="shippingCompany.scid"></form:errors></td>
 			</tr>
 		</table>
 		<input type="submit" value="Order Ship">
 	</form:form>
-	<a href="/">Home</a>
+		<br>
+	<a href="/index.html">Home</a>
 </body>
 </html>
